@@ -190,6 +190,8 @@ Class Action {
 		$data .= ", bus_house = '$bus_house' ";
 		$data .= ", bus_building = '$bus_building' ";
 		$data .= ", bus_years = '$bus_years' ";
+		$data .= ", project_cost = '$project_cost' ";
+		$data .= ", own_con = '$own_con' ";
 		
 		if(empty($id)){
 			$save = $this->db->query("INSERT INTO borrowers set ".$data);

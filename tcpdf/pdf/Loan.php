@@ -32,6 +32,10 @@ $contact_no=$data['contact_no'];
 $bus_name=$data['bus_name'];
 $bus_town=$data['bus_town'];
 $bus_street=$data['bus_street'];
+$bus_years=$data['years'];
+$project_cost=$data['project_cost'];
+$own_con=$data['own_con'];
+
 
 //SELECTING FROM LOAN LIST TABLE
 $query=mysqli_query($con,"SELECT * FROM `loan_list` ORDER BY borrower_id;");
@@ -168,7 +172,7 @@ $html = <<<EOD
 
  <tr>
  <td  valign="top" >  </td>
- <td  colspan="5" valign="top" ><p>Postal Address Current</p></td>
+ <td  colspan="5" valign="top" ><p>Postal Address Current $address</p></td>
  </tr>
 
  <tr>
@@ -179,22 +183,22 @@ $html = <<<EOD
  <tr>
  <td  valign="top" >  </td>
  <td  valign="top" ><p>Tel: (Landline) </p></td>
- <td  colspan="2" valign="top" ><p>Mobile </p></td>
- <td  colspan="2" valign="top" ><p>Email:</p></td>
+ <td  colspan="2" valign="top" ><p>Mobile: <strong> $contact_no</strong> </p></td>
+ <td  colspan="2" valign="top" ><p>Email:<strong> $email </strong></p></td>
  </tr>
 
  <tr>
  <td  valign="top" >  </td>
- <td  valign="top" ><p>Residence: Town</p></td>
- <td  colspan="2" valign="top" ><p>Estate</p></td>
+ <td  valign="top" ><p>Residence: Town <strong>$town</strong></p></td>
+ <td  colspan="2" valign="top" ><p>Estate <strong>$estate</strong></p></td>
  <td  colspan="2" valign="top" ><p>Estate</p></td>
  </tr>
 
  <tr>
- <td  valign="top" >  </td>
- <td  valign="top" ><p>House No.</p></td>
- <td  colspan="2" valign="top" ><p>Rented</p></td>
- <td  colspan="2" valign="top" ><p>Owned</p></td>
+ <td  valign="top">  </td>
+ <td  valign="top"><p>House No. <strong>$house_no</p></td>
+ <td  colspan="2" valign="top"><p>Rented</p></td>
+ <td  colspan="2" valign="top"><p>Owned</p></td>
  </tr>
 
  <tr>
@@ -207,19 +211,19 @@ $html = <<<EOD
 
  <tr>
  <td  valign="top" >  </td>
- <td  colspan="5" valign="top" ><p>Nature of Business</p></td>
+ <td  colspan="5" valign="top" ><p>Nature of Business: $bus_name</p></td>
  </tr>
 
  <tr>
  <td  valign="top" >  </td>
  <td  valign="top" ><p>Physical Address (Attach Sketch)</p></td>
- <td  colspan="2" valign="top" ><p>Town</p></td>
- <td  colspan="2" valign="top" ><p>Building</p></td>
+ <td  colspan="2" valign="top" ><p>Town $bus_town</p></td>
+ <td  colspan="2" valign="top" ><p>Building $bus_building</p></td>
  </tr>
 
  <tr>
  <td  valign="top" >  </td>
- <td  colspan="5" valign="top" ><p>Street No. of Years in this Business</p></td>
+ <td  colspan="5" valign="top" ><p>Street No. of Years in this Business: $bus_years</p></td>
  </tr>
 
  <tr>
@@ -231,21 +235,21 @@ $html = <<<EOD
 
  <tr>
  <td  valign="top" >  </td>
- <td  colspan="3" valign="top" ><p>Amount applied for (Kshs)</p></td>
- <td  valign="top" ><p>Purpose</p></td>
+ <td  colspan="3" valign="top" ><p>Amount applied for (Kshs) $amount</p></td>
+ <td  valign="top" ><p>Purpose $purpose</p></td>
  <td  valign="top" >  </td>
  </tr>
 
  <tr>
  <td  valign="top" >  </td>
- <td  colspan="3" valign="top" ><p>Cost of Project (Kshs)</p></td>
- <td  colspan="2" valign="top" ><p>Own Contribution (Kshs)</p></td>
+ <td  colspan="3" valign="top" ><p>Cost of Project $project_cost(Kshs)</p></td>
+ <td  colspan="2" valign="top" ><p>Own Contribution (Kshs) $own_con</p></td>
  </tr>
 
  <tr>
  <td  valign="top" >  </td>
  <td  colspan="3" valign="top" >  </td>
- <td  colspan="2" valign="top" ><p>Monthly Repayments (Kshs)</p></td>
+ <td  colspan="2" valign="top" ><p>Monthly Repayments (Kshs) </p></td>
  </tr>
 
  <tr>
